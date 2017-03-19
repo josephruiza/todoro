@@ -16,8 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from tasks.views import task_list
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
+    url(r'^$', task_list), # quiero que se ejecute task_list
 ]
