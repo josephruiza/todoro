@@ -13,15 +13,12 @@ def task_list(request):
     #recuperamos los objs del modelo
     tasks = Task.objects.all()
 
-    #creamos el texto a mostrar
-    html = "<ul>"
-    for task in tasks:
-        html += "<li>" + task.name + "</li>"
-
-    html += "</ul>"
-
     #devolvemos la respuesta
-    return HttpResponse(html)
+    context = {
+        'task_objects': tasks
+    }
+
+    return render(request, 'task/list.html', context)
 
 
 
