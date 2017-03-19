@@ -1,5 +1,7 @@
 #Excluimos el entorno virtual y los ficheros de Pycharm
 .idea
 env/
+*.pyc
+db.sqlite3
 
 

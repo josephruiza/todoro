@@ -17,3 +17,5 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True) #automaticamente añada la fecha de creación
     modified_at = models.DateTimeField(auto_now=True) #automaticamente actualiza la fecha
 
+    def __str__(self):
+        return self.name
