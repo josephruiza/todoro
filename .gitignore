@@ -1,0 +1,5 @@
+#Excluimos el entorno virtual y los ficheros de Pycharm
+.idea
+env/
+
+
