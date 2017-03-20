@@ -10,8 +10,8 @@ def task_list(request):
     :param request:HttpRequest
     :return HttpResponse
     """
-    #recuperamos los objs del modelo
-    tasks = Task.objects.all()
+    # recuperamos los objs del modelo
+    tasks = Task.objects.select_related("owner", "assigned")
 
     #devolvemos la respuesta
     context = {
