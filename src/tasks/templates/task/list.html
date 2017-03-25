@@ -18,7 +18,10 @@
         <tbody>
             {% for task in task_objects %}
                 <tr>
-                    <td>{{ task.name }}</td>
+                    <td>
+                        <a href="#">{{ task.name }}</a>
+
+                    </td>
                     <td>
                         {{ task.owner.first_name }} {{ task.owner.last_name }}
                     </td>
