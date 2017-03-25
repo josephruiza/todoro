@@ -20,6 +20,6 @@ from tasks.views import task_list, task_detail
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', task_list), # quiero que se ejecute task_list
-    url(r'^task/(?P<task_pk>[0-9]+)$', task_detail),
+    url(r'^$', task_list, name="task_list"), # quiero que se ejecute task_list
+    url(r'^task/(?P<task_pk>[0-9]+)$', task_detail, name="task_detail"),
 ]
