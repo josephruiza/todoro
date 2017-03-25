@@ -11,23 +11,36 @@
     <ul>
         <li>
             <strong>owner:</strong>
-            {{ task.assigned }}
-        </li>
-        <li>
-            <strong>assigned:</strong>
             {{ task.owner }}
         </li>
         <li>
+            <strong>assigned:</strong>
+            {% if task.assigned %}
+                {{ task.assigned.first_name }} {{ task.assigned.last_name }}
+            {% else %}
+                Unassigned
+            {% endif %}
+        </li>
+        <li>
             <strong>estimated:</strong>
-            {{ task.time_estimated }}
+            {% if task.time_estimated %}
+                {{ task.time_estimated }}
+            {% else %}
+                No time estimated set
+            {% endif %}
         </li>
         <li>
             <strong>status:</strong>
-            {{ task.status }}
+            {{ task.get_status_display }}
         </li>
         <li>
             <strong>deadline:</strong>
-            {{ task.deadline }}
+            {% if task.deadline %}
+                {{ task.deadline }}
+            {% else %}
+                No deadline set
+            {% endif %}
+
         </li>
 
     </ul>
